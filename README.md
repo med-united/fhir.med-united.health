@@ -8,7 +8,7 @@ In order to start developing, you should have:
 
 ## Running locally
 
-There are different ways to run this server entirely and it depends on your environment requirements:
+There are different ways to run this server and it depends on your environment requirements:
 
 ## Using jetty
 ```bash
