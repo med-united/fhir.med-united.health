@@ -84,8 +84,8 @@ To configure the server to use PostgreSQL, instead of the default H2, update the
 ```yaml
 spring:
   datasource:
-    url: 'jdbc:postgresql://localhost:5432/hapi_dstu3'
-    username: admin
+    url: 'jdbc:postgresql://localhost:5000/fhir'
+    username: hapi
     password: admin
     driverClassName: org.postgresql.Driver
 ```
