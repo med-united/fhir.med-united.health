@@ -34,6 +34,22 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
+        env:
+        - name: DB_URL
+          valueFrom:
+            secretKeyRef:
+              name: fhir-server
+              key: dbUrl
+        - name: DB_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: fhir-server
+              key: dbUsername   
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: fhir-server
+              key: dbPassword 
         
 ---
 
