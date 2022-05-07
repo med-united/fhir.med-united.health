@@ -168,3 +168,6 @@ Temporary Items
 
 # Helm Chart dependencies
 **/charts/*.tgz
+
+# VS Code Config files
+.vscode
