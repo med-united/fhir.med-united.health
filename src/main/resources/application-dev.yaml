@@ -49,6 +49,12 @@ spring:
   batch:
     job:
       enabled: false
+keycloak:
+  realm: med-united
+  auth-server-url: https://id.med-united.health
+  ssl-required: external
+  resource: fhir
+  use-resource-role-mappings: true
 hapi:
   fhir:
     ### This enables the swagger-ui at /fhir/swagger-ui/index.html as well as the /fhir/api-docs (see https://hapifhir.io/hapi-fhir/docs/server_plain/openapi.html)
