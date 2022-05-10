@@ -73,7 +73,7 @@ metadata:
     kubernetes.io/ingress.class: "nginx"
     nginx.ingress.kubernetes.io/cors-allow-headers: Content-Type
     nginx.ingress.kubernetes.io/cors-allow-methods: POST, GET, OPTIONS
-    nginx.ingress.kubernetes.io/cors-allow-origin: https://earztbrief.med-united.health
+    nginx.ingress.kubernetes.io/cors-allow-origin: *
     nginx.ingress.kubernetes.io/cors-expose-headers: X-Custom-Header
     nginx.ingress.kubernetes.io/cors-max-age: "86400"
     nginx.ingress.kubernetes.io/enable-cors: "true"
