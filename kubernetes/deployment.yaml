@@ -77,6 +77,8 @@ metadata:
     nginx.ingress.kubernetes.io/cors-expose-headers: X-Custom-Header
     nginx.ingress.kubernetes.io/cors-max-age: "86400"
     nginx.ingress.kubernetes.io/enable-cors: "true"
+    nginx.ingress.kubernetes.io/proxy-body-size: "512m"
+    nginx.org/client-max-body-size: "512m"
 spec:
   tls:
     - hosts:
