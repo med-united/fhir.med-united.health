@@ -16,14 +16,18 @@ public class WebSecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		super.configure(http);
-		http.cors().configurationSource(request -> new CorsConfiguration().applyPermitDefaultValues()).and()
-				.authorizeRequests().anyRequest().authenticated();
+		http.cors()
+			.configurationSource(request -> new CorsConfiguration().applyPermitDefaultValues())
+			.and()
+			.authorizeRequests().anyRequest().authenticated()
+			.and()
+			.csrf().disable();
 	}
-	
+
 	@Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth.authenticationProvider(keycloakAuthenticationProvider());
-    }
+	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+		auth.authenticationProvider(keycloakAuthenticationProvider());
+	}
 
 	@Bean
 	@Override
