@@ -595,7 +595,40 @@
                 </dependency>
             </dependencies>
         </profile>
-        <!-- examples of how to start the server using the default profile-->
+        <profile>
+            <id>h2</id>
+            <dependencies>
+                <dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-web</artifactId>
+                    <version>${spring_boot_version}</version>
+                </dependency>
+            </dependencies>
+	    <build>
+	    <plugins>
+	    <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <profiles>
+                        <profile>h2</profile>
+                    </profiles>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                        <configuration>
+                            <mainClass>ca.uhn.fhir.jpa.starter.Application</mainClass>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+    </plugins>
+    </build>
+    </profile>
+         <!-- examples of how to start the server using the default profile-->
         <!-- mvn clean package jetty:run -Dspring.batch.job.enabled=false -->
         <!-- java -jar -Dspring.batch.job.enabled=false jetty-runner.jar target/hapi-fhir-jpaserver.war -->
         <profile>
