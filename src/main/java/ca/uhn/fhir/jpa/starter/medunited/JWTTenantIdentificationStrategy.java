@@ -62,7 +62,7 @@ public class JWTTenantIdentificationStrategy implements ITenantIdentificationStr
 			PartitionEntity partitionEntity = new PartitionEntity();
 			Integer max = myPartitionLookupSvc.listPartitions().stream().map(pe -> pe.getId()).reduce(Integer::max)
 					.orElse(0);
-			partitionEntity.setId(max);
+			partitionEntity.setId(max + 1);
 			partitionEntity.setName(domain);
 			myPartitionLookupSvc.createPartition(partitionEntity);
 		}
