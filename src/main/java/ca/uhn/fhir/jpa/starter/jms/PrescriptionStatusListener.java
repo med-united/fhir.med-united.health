@@ -26,7 +26,7 @@ public class PrescriptionStatusListener {
 
 	@JmsListener(destination = "PrescriptionStatus")
 	public void processMessage(String content) {
-        JsonObject jsonObject = Json.createParser(new StringReader(content)).getObject();
+        JsonObject jsonObject = Json.createReader(new StringReader(content)).readObject();
         String medicationRequestId = jsonObject.getString("medicationRequestId", "N/A");
         String info = jsonObject.getString("info", "N/A");
 
